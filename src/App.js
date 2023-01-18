@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ToastBar, Toaster } from 'react-hot-toast';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routess } from './router/Routess';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <Toaster>
+          {(t) => (
+              <ToastBar
+                  toast={t}
+                  style={{
+                    ...t.style,
+                    animation: t.visible
+                        ? 'custom-enter 1s ease'
+                        : 'custom-exit 1s ease',
+                  }}
+                  toastOptions={{
+                    success: {
+                      style: {
+                        background: 'green',
+                      },
+                    },
+                    error: {
+                      style: {
+                        background: 'red',
+                      },
+                    },
+                  }}
+              />
+          )}
+        </Toaster>
+        <Router>
+          <Routess />
+        </Router>
+      </>
   );
-}
+};
 
 export default App;

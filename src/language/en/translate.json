@@ -1,0 +1,12 @@
+{
+  "translations": {
+    "navbar": {
+      "ru": "Russian",
+      "uz": "Uzbek",
+      "en": "English"
+    },
+    "example": {
+      "example_text": "Главная ru default text"
+    }
+  }
+}
